@@ -3,7 +3,7 @@ import {Link} from 'react-router'
 import CSSTransactionGroup from "react-addons-css-transition-group";
 
 const Photo = React.createClass({
-    
+
 
     render(){
         return(
@@ -11,7 +11,7 @@ const Photo = React.createClass({
               <div className="grid-figure" >
                 <Link to={'/view/${this.props.post.code}'}>
                   <img src={this.props.post.display_src} alt={this.props.post.caption}/>
-                </Link> 
+                </Link>
                 <CSSTransactionGroup
                     transitionName="like"
                     transitionEnterTimeout={500}
@@ -20,7 +20,7 @@ const Photo = React.createClass({
                 </CSSTransactionGroup>
             </div>
             <figcaption>
-               <p>{this.props.post.caption}</p> 
+               <p>{this.props.post.caption}</p>
                <div className="control-buttons">
                    <button className="likes" onClick={this.props.increment.bind(null,this.props.i)}>&hearts; {this.props.post.likes}</button>
                    <Link to={'/view/${this.props.post.code}'}>
@@ -28,10 +28,10 @@ const Photo = React.createClass({
                         <span className="speech-bubble"></span>
                         {this.props.comments[this.props.post.code] ?this.props.comments[this.props.post.code].length:0 }
                     </span>
-                   </Link> 
+                   </Link>
                </div>
           </figcaption>
-        </figure>   
+        </figure>
         )
     }
 })
