@@ -6,10 +6,12 @@ const Photo = React.createClass({
 
 
     render(){
+
+      var link = this.props.post.code
         return(
             <figure className="grid-figure">
               <div className="grid-figure" >
-                <Link to={'/view/${this.props.post.code}'}>
+                <Link to={'/view/'+link}>
                   <img src={this.props.post.display_src} alt={this.props.post.caption}/>
                 </Link>
                 <CSSTransactionGroup
@@ -23,7 +25,7 @@ const Photo = React.createClass({
                <p>{this.props.post.caption}</p>
                <div className="control-buttons">
                    <button className="likes" onClick={this.props.increment.bind(null,this.props.i)}>&hearts; {this.props.post.likes}</button>
-                   <Link to={'/view/${this.props.post.code}'}>
+                   <Link to={'/view/'+link}>
                     <span className="comment-count">
                         <span className="speech-bubble"></span>
                         {this.props.comments[this.props.post.code] ?this.props.comments[this.props.post.code].length:0 }
