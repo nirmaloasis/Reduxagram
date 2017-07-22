@@ -3,7 +3,7 @@
 function posts(state = [],action){
     switch(action.type){
         case "INCEREMENT_LIKES":
-        console.log("reached")
+      
           const i = action.index
             return[
                 ...state.slice(0,i),
